@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Email Buddy",
+  "version": "0.1.0",
+  "description": "AI side panel for email with semantic search.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://outlook.live.com/*"
+  ],
+  "background": {
+    "service_worker": "dist/service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*"
+      ],
+      "js": ["dist/content_script.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "dist/src/panel.html",
+    "default_title": "Email Buddy"
+  }
+}
