@@ -15,6 +15,13 @@ Email assistant — Chrome MV3 extension + FastAPI backend.
   - Load unpacked in Chrome: `chrome://extensions` → Developer mode → Load unpacked → select the `extension` folder
   - The popup shows the panel; it fetches summary/search from `http://localhost:8000` when available, else falls back to mock data.
 
+## Dev Script (run both concurrently)
+- Start backend + extension watcher together:
+  - `bash ./dev.sh`
+- Then, in Chrome:
+  - `chrome://extensions` → Reload the extension after file changes
+  - Refresh your Gmail/Outlook tab to see updates
+
 ## Status
 - Backend: Health check + stub endpoints `/dashboard/summary` and `/search`.
 - Extension: React panel with summary and basic search, wired through the service worker.
